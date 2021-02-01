@@ -8,18 +8,18 @@ namespace DataStructures
         protected int length;
         protected int count;
 
-        LinearDataStructure(int initialLength)
+        protected LinearDataStructure(int initialLength)
         {
             length = initialLength;
             array = new T[length];
         }
 
-        protected void Insert(T item, int index)
+        public virtual void Insert(T item, int index)
         {
             array[index] = item;
         }
 
-        protected void Remove(int index)
+        public virtual void Remove(int index)
         {
             array[index] = default;
             T[] newArray = new T[array.Length - 1];
@@ -30,16 +30,16 @@ namespace DataStructures
                     int j = 0;
                     newArray[i] = array[j];
                     j++;
-                }              
+                }
             }
             array = newArray;
         }
 
-        protected void ResizeTo(int newLength)
+        public virtual void ResizeTo(int newLength)
         {
             length = newLength;
             T[] newArray = new T[length];
-            for(int i = 0; i < array.Length - 1; i++)
+            for(int i = 0; i < newArray.Length - 1; i++)
             {
                 newArray[i] = array[i];
             }
@@ -50,7 +50,7 @@ namespace DataStructures
         {
             get
             {
-                return count;
+                return length;
             }
             set
             {
