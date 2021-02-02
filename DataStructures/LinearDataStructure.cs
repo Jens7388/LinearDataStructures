@@ -17,6 +17,7 @@ namespace DataStructures
         public virtual void Insert(T item, int index)
         {
             array[index] = item;
+            length++;
         }
 
         public virtual void Remove(int index)
@@ -32,6 +33,7 @@ namespace DataStructures
                     j++;
                 }
             }
+            length--;
             array = newArray;
         }
 

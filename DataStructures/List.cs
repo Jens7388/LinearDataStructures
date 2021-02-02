@@ -10,6 +10,7 @@ namespace DataStructures
 
         public List(int initialLength) : base(initialLength: initialLength)
         {
+            length = initialLength;
             array = new T[length];
         }
     }
