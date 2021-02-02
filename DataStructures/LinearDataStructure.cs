@@ -46,8 +46,7 @@ namespace DataStructures
                     newArray[j] = array[i + 1];
                     j++;
                     i++;
-                }
-           
+                }      
             }
             length--;
             array = newArray;
