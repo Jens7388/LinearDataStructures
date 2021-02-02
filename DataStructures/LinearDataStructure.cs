@@ -34,13 +34,20 @@ namespace DataStructures
         {
             T[] newArray = new T[array.Length - 1];
             int j = 0;
-            for(int i = 0; i < array.Length - 1; i++)
+            for(int i = 0; i < array.Length; i++)
             {
-                if(i != index || index == 0)
+                if(i != index)
                 {
-                    newArray[i] = array[j + 1];
+                    newArray[j] = array[i];
                     j++;
                 }
+                else if(i == index && index == 0)
+                {
+                    newArray[j] = array[i + 1];
+                    j++;
+                    i++;
+                }
+           
             }
             length--;
             array = newArray;
