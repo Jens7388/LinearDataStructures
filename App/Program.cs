@@ -10,9 +10,9 @@ namespace App
         {
             Stack<char> stack = new(0);
             //CharSequence(stack);
-            Console.WriteLine(CheckIfPalindrome(stack)); 
-        }
+            Console.WriteLine(CheckIfPalindrome(stack));
 
+        }
         private static void CharSequence(Stack<char> stack)
         {
             stack.Push(stack, 'h');
