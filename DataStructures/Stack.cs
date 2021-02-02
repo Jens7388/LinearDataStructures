@@ -39,5 +39,16 @@ namespace DataStructures
             stack.array = newArray;
         }
 
+        public virtual T[] Items
+        {
+            get
+            {
+                return array;
+            }
+            set
+            {
+                array = value;
+            }
+        }
     }
 }
