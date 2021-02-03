@@ -70,17 +70,17 @@ namespace App
 
         private static void PrintQueue(Queue<char> queue)
         {
-            queue.Push('H');
-            queue.Push('e');
-            queue.Push('l');
-            queue.Push('l');
-            queue.Push('o');
-            queue.Push(' ');
-            queue.Push('W');
-            queue.Push('o');
-            queue.Push('r');
-            queue.Push('l');
-            queue.Push('d');
+            queue.Add('H');
+            queue.Add('e');
+            queue.Add('l');
+            queue.Add('l');
+            queue.Add('o');
+            queue.Add(' ');
+            queue.Add('W');
+            queue.Add('o');
+            queue.Add('r');
+            queue.Add('l');
+            queue.Add('d');
             queue.Inverse();
             foreach(char c in queue.Items)
             {

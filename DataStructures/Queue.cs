@@ -13,14 +13,16 @@ namespace DataStructures
             length = initialLength;
         }
 
-        public virtual void Push(T item)
+        public virtual void Add(T item)
         {
             Insert(item, Count);
         }
 
-        public virtual void Pop()
+        public virtual T Pop()
         {
+            T poppedItem = Items[0];
             Remove(0);
+            return poppedItem;
         }
 
         public virtual void Inverse()

@@ -19,9 +19,11 @@ namespace DataStructures
             Insert(item, 0);
         }
 
-        public virtual void Pop()
+        public virtual T Pop()
         {
+            T poppedItem = Items[0];
             Remove(0);
+            return poppedItem;
         }
     }
 }
