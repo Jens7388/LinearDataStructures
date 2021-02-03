@@ -8,15 +8,13 @@ namespace DataStructures
 {
     public class Stack<T> : LinearDataStructure<T>
     {
-        //private T[] array;
 
         public Stack(int initialLength) : base(initialLength: initialLength)
         {
             length = initialLength;
-           // array = new T[length];
         }
 
-        public void Push(Stack<T> stack, T item)
+        public virtual void Push(Stack<T> stack, T item)
         {
             stack.Insert(item, 0);
         }

@@ -8,7 +8,7 @@ namespace App
     {
         static void Main()
         {
-            Stack<char> stack = new(4);
+            Stack<char> stack = new(3);
             //CharSequence(stack);
             TowerOfHanoi(stack);
 
