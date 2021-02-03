@@ -18,23 +18,23 @@ namespace Tests
         public void TestPush()
         {
             Stack<int> stack = new(0);
-            stack.Push(stack, 1);
-            stack.Push(stack, 2);
-            stack.Push(stack, 3);
-            stack.Push(stack, 4);
-            stack.Push(stack, 5);
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            stack.Push(4);
+            stack.Push(5);
         }
 
         [Fact]
         public void TestPop()
         {
             Stack<int> stack = new(0);
-            stack.Push(stack, 1);
-            stack.Push(stack, 2);
-            stack.Push(stack, 3);
-            stack.Push(stack, 4);
-            stack.Push(stack, 5);
-            stack.Pop(stack);
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            stack.Push(4);
+            stack.Push(5);
+            stack.Pop();
         }
     }
 }

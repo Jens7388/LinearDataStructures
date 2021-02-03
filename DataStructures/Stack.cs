@@ -14,14 +14,14 @@ namespace DataStructures
             length = initialLength;
         }
 
-        public virtual void Push(Stack<T> stack, T item)
+        public virtual void Push(T item)
         {
-            stack.Insert(item, 0);
+            Insert(item, 0);
         }
 
-        public virtual void Pop(Stack<T> stack)
+        public virtual void Pop()
         {
-            stack.Remove(0);
+            Remove(0);
         }
     }
 }

@@ -13,14 +13,26 @@ namespace DataStructures
             length = initialLength;
         }
 
-        public virtual void Push(Queue<T> queue, T item)
+        public virtual void Push(T item)
         {
-            queue.Insert(item, queue.Count);
+            Insert(item, Count);
         }
 
-        public virtual void Pop(Queue<T> queue)
+        public virtual void Pop()
         {
-            queue.Remove(0);
+            Remove(0);
+        }
+
+        public virtual void Inverse()
+        {
+            int i = 0;
+            int j = Count - 1;
+            while(j > i)
+            {
+                (Items[i], Items[j]) = (Items[j], Items[i]);
+                i++;
+                j--;
+            }
         }
     }
 }

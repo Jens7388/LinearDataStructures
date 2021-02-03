@@ -1,6 +1,7 @@
 ﻿using DataStructures;
 
 using System;
+using System.Threading;
 
 namespace App
 {
@@ -9,30 +10,32 @@ namespace App
         static void Main()
         {
             Stack<char> stack = new(3);
+            Queue<char> queue = new(0);
+            PrintQueue(queue);
             //CharSequence(stack);
-            TowerOfHanoi(stack);
+            //TowerOfHanoi(stack);
 
         }
         private static void CharSequence(Stack<char> stack)
         {
-            stack.Push(stack, 'h');
-            stack.Push(stack, 'e');
-            stack.Push(stack, 'l');
-            stack.Push(stack, 'l');
-            stack.Push(stack, 'o');
-            for(int i = stack.Count - 1; i >= 0; i--)
+            stack.Push('h');
+            stack.Push('e');
+            stack.Push('l');
+            stack.Push('l');
+            stack.Push('o');
+            foreach(char c in stack.Items)
             {
-                Console.Write(stack.Items[i]);
+                Console.Write(c);
             }
         }
 
         private static bool CheckIfPalindrome(Stack<char> stack)
         {
-            stack.Push(stack, 'r');
-            stack.Push(stack, 'e');
-            stack.Push(stack, 'j');
-            stack.Push(stack, 'e');
-            stack.Push(stack, 'r');
+            stack.Push('r');
+            stack.Push('e');
+            stack.Push('j');
+            stack.Push('e');
+            stack.Push('r');
 
             int j = stack.Count - 1;
             for(int i = 0; i < stack.Count - 1; i++)
@@ -46,12 +49,12 @@ namespace App
             return true;
         }
 
-        public static void TowerOfHanoi(Stack<char> stack)
+        private static void TowerOfHanoi(Stack<char> stack)
         {
             Move(stack.Count, 'A', 'C', 'B');
         }
 
-        public static void Move(int n, char from_rod, char to_rod, char aux_rod)
+        private static void Move(int n, char from_rod, char to_rod, char aux_rod)
         {
             if(n == 1)
             {
@@ -63,6 +66,27 @@ namespace App
             Console.WriteLine("Move disk " + n + " from rod " +
             from_rod + " to rod " + to_rod);
             Move(n - 1, aux_rod, to_rod, from_rod);
+        }
+
+        private static void PrintQueue(Queue<char> queue)
+        {
+            queue.Push('H');
+            queue.Push('e');
+            queue.Push('l');
+            queue.Push('l');
+            queue.Push('o');
+            queue.Push(' ');
+            queue.Push('W');
+            queue.Push('o');
+            queue.Push('r');
+            queue.Push('l');
+            queue.Push('d');
+            queue.Inverse();
+            foreach(char c in queue.Items)
+            {
+                Console.Write(c);
+                Thread.Sleep(500);
+            }
         }
     }
 }

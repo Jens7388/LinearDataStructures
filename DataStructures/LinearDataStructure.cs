@@ -74,6 +74,7 @@ namespace DataStructures
                 count = value;
             }
         }
+
         public virtual T[] Items
         {
             get
