@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructures
 {
@@ -15,6 +11,28 @@ namespace DataStructures
             length = initialLength;
         }
 
+        public override void Insert(Node<T> node, int index)
+        {
+            base.Insert(node, index);
+            if(index + 1 < Items.Length - 1)
+            {
+                node.Next = Items[index + 1];
+            }          
+            if(index - 1 >= 0)
+            {
+                Items[index - 1].Next = node;
+            }
+        }
+
+        public override void Remove(int index)
+        {
+            base.Remove(index);
+            if(index > 0)
+            {
+                Items[index - 1].Next = Items[index];
+            }
+        }
+
         public virtual void ReplaceFirst(Node<T> newNode)
         {
             if(IsEmpty)
@@ -24,6 +42,10 @@ namespace DataStructures
             else
             {
                 Items[0] = newNode;
+                if(Items.Length > 1)
+                {
+                    newNode.Next = Items[1];
+                }            
             }
         }
 
@@ -36,10 +58,28 @@ namespace DataStructures
             else
             {
                 int j = 0;
-                for(int i = 1; i < Count - 1; i++)
+                for(int i = 1; i < Count; i++)
                 {
                     Items[i] = newList.Items[j];
                 }
+                Items[0].Next = Items[1];
+            }
+        }
+
+        public virtual string PrintAll()
+        {
+            if(IsEmpty)
+            {
+                return "";
+            }
+            else
+            {
+                string toReturn = "";
+                foreach(Node<T> node in Items)
+                {
+                    toReturn += $"{node} \n";
+                }
+                return toReturn;
             }
         }
 

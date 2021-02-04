@@ -16,18 +16,25 @@ namespace DataStructures
 
         public virtual void Insert(T item, int index)
         {
-            T[] newArray = new T[array.Length + 1];
-            for(int i = 0; i < index; i++)
+            if(array[index] != null)
             {
-                newArray[i] = array[i];
+                T[] newArray = new T[array.Length + 1];
+                for(int i = 0; i < index; i++)
+                {
+                    newArray[i] = array[i];
+                }
+                newArray[index] = item;
+                for(int i = index + 1; i < newArray.Length; i++)
+                {
+                    newArray[i] = array[i - 1];
+                }
+                array = newArray;
+                length++;
             }
-            newArray[index] = item;
-            for(int i = index + 1; i < newArray.Length; i++)
+            else
             {
-                newArray[i] = array[i - 1];
+                array[index] = item;
             }
-            array = newArray;
-            length++;
         }
 
         public virtual void Remove(int index)

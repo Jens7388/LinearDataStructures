@@ -9,12 +9,17 @@ namespace App
     {
         static void Main()
         {
-            Stack<char> stack = new(3);
+            /*Stack<char> stack = new(3);
             Queue<char> queue = new(0);
             PrintQueue(queue);
-            //CharSequence(stack);
-            //TowerOfHanoi(stack);
+            CharSequence(stack);
+            TowerOfHanoi(stack);*/
 
+            LinkedList<int> list = new(3);
+            list.Insert(new Node<int>(3), 0);
+            list.Insert(new Node<int>(4), 1);
+            list.Insert(new Node<int>(5), 2);
+            Console.WriteLine(list.PrintAll()); 
         }
         private static void CharSequence(Stack<char> stack)
         {
